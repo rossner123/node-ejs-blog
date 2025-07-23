@@ -1,0 +1,16 @@
+<%- include("./partials/header.ejs") %>
+
+<div class="slider"></div>
+
+<section class="posts-section">
+    <div class="posts">
+        <% posts.slice(0, 12).forEach((post) => { %>
+            <%- include("./partials/card.ejs", {post: post}) %>
+        <% }) %>
+    </div>
+
+<button class="load-more">LOAD MORE</button>
+</section>
+
+
+<%- include("./partials/footer.ejs") %>

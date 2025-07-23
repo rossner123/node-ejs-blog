@@ -1,0 +1,13 @@
+<%- include("./partials/header.ejs") %>
+
+<form action="/new" method="post">
+  <label for="title">Título do Post:</label>
+  <input type="text" name="title" id="title" required>
+
+  <label for="content">Conteúdo do Post:</label>
+  <textarea name="content" id="content" rows="5" required></textarea>
+
+  <input type="submit" value="Publicar">
+</form>
+
+<%- include("./partials/footer.ejs") %>
