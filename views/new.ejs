@@ -1,13 +1,32 @@
 <%- include("./partials/header.ejs") %>
 
-<form action="/new" method="post">
-  <label for="title">Título do Post:</label>
-  <input type="text" name="title" id="title" required maxlength="20">
+<div class="form-main">
+  <form action="/new" method="post" class="form-container">
+    <h1>Create Post</h1>
 
-  <label for="content">Conteúdo do Post:</label>
-  <textarea name="content" id="content" rows="5" required maxlength="50"></textarea>
+    <div class="form-section">
+      <label for="title">Title</label>
+      <div class="input-wrapper">
+        <input id="title" name="title" type="text"
+          placeholder="Summarize the things you learn here (no more than 20 characters)" required maxlength="20">
+        <span id="contadorTitle">0/20</span>
+      </div>
+      <label for="content">Content</label>
+      <div class="input-wrapper">
+        <input id="content" name="content" type="text"
+          placeholder="Summarize the things you learn here (no more than 50 characters)" required maxlength="50">
+        <span id="contadorContent">0/50</span>
+      </div>
+      <div class="media-options">
+        <button class="media-btn" type="button"><span>+</span> Add Picture</button>
+      </div>
+    </div>
 
-  <input type="submit" value="Publicar">
-</form>
+    <div class="form-actions">
+      <button class="submit-btn" id="submit-btn" type="submit">Submit</button>
+      <input class="cancel-btn" id="cancel-btn" value="Cancel" type="button">
+    </div>
+  </form>
+</div>
 
 <%- include("./partials/footer.ejs") %>

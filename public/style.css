@@ -338,3 +338,140 @@ body {
 .subscribe-form button:hover {
     color: #007BFF;
 }
+
+
+/* Página new.ejs */
+
+.form-main{
+    background-color: #F5F5F5;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+  background-color: #F5F5F5;
+  padding: 30px;
+  width: 700px;
+  border-radius: 8px;
+}
+
+.form-container h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.form-section {
+  margin-bottom: 20px;
+}
+
+.form-container label {
+  display: block;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-left: none;
+  padding: 10px;
+  background-color: #fff;
+  color: #3E3E3E;
+}
+
+.form-section label:nth-child(3) {
+    margin-top: 1rem;
+}
+
+.form-container input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-left: none;
+}
+
+.form-section #title {
+    padding-bottom: 20px;
+    vertical-align: top;
+}
+
+.form-section #content{
+    height: 100px;
+    padding-top: 20px;
+    padding-bottom: 80px;
+    vertical-align: top;
+}
+
+.input-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.input-wrapper #contadorTitle, #contadorContent {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  font-size: 12px;
+  color: #888;
+}
+
+.media-options {
+    background-color: #E8E8E8;
+    padding: 10px 15px;
+}
+
+.media-btn span{
+    color: #4CAF50;
+}
+
+.media-btn {
+  background: none;
+  border: none;
+  color: #888888;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.media-btn:hover {
+  color: #4CAF50;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.submit-btn {
+  background: #888888;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover{
+    background-color: #4CAF50;
+}
+
+.cancel-btn {
+  background: none;
+  color: #666;
+  outline: 1px solid #888888;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn:hover{
+    background-color: rgb(252, 74, 74);
+    color: #fff;
+    outline: none;
+}
