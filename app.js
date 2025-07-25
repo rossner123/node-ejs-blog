@@ -9,12 +9,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-let posts = [
-    {
-        id: 1,
-        title: "Post Test"
-    }
-]
+let posts = []
 
 app.get("/", (req, res) => {
     res.render("index.ejs", {
@@ -25,7 +20,7 @@ app.get("/", (req, res) => {
 })
 
 app.get("/new", (req, res) => {
-    res.render("new.ejs",)
+    res.render("new.ejs")
 })
 
 app.post("/new", (req, res) => {
@@ -42,15 +37,40 @@ app.post("/new", (req, res) => {
 })
 
 app.get("/edit/:id", (req, res) => {
-    res.render("edit.ejs", {
+    const postId = req.params.id
 
+    res.render("edit.ejs", {
+        postId: postId
     })
 })
 
 app.post("/edit/:id", (req, res) => {
-    res.render("edit.ejs", {
+    const idParaEditar = req.params.id;
+    const { newTitle, newContent } = req.body
 
-    })
+    const novosDados = {
+        title: newTitle,
+        content: newContent
+    }
+
+    const indice = posts.findIndex(post => post.id === Number(idParaEditar));
+
+    if (indice !== -1) {
+      posts[indice].title = newTitle;
+      posts[indice].content = newContent;
+    }
+
+    res.redirect("/")
+})
+
+app.post("/delete/:id", (req, res) => {
+    const idParaExcluir = req.params.id;
+
+    const indice = posts.findIndex(post => post.id === Number(idParaExcluir));
+
+    posts.splice(indice, 1)
+
+    res.redirect("/")
 })
 
 app.listen(3000, () => {

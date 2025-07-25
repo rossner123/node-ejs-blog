@@ -14,5 +14,13 @@
         <li><i class="fa fa-eye"></i> 138</li>
       </ul>
     </div>
+
+    <div class="post-actions">
+        <a href="/edit/<%= post.id %>" class="edit-btn"><i class="fa fa-pencil"></i></a>
+        <form action="/delete/<%= post.id %>" method="POST" style="display:inline;">
+            <button type="submit" class="delete-btn"><i class="fa fa-trash"></i></button>
+        </form>
+    </div>
+
   </div>
 </div>

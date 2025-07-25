@@ -1,0 +1,14 @@
+<%- include("./partials/header.ejs") %>
+
+<form action="/edit/<%= postId %>" method="post">
+    <h1><%= postId %></h1>
+    <label for="newTitle">Título do Post:</label>
+    <input type="text" name="newTitle" id="newTitle" required>
+
+    <label for="newContent">Conteúdo do Post:</label>
+    <textarea name="newContent" id="newContent" rows="5" required></textarea>
+
+    <input type="submit" value="Editar">
+</form>
+
+<%- include("./partials/footer.ejs") %>
