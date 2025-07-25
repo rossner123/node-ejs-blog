@@ -2,10 +2,10 @@
 
 <form action="/new" method="post">
   <label for="title">Título do Post:</label>
-  <input type="text" name="title" id="title" required>
+  <input type="text" name="title" id="title" required maxlength="20">
 
   <label for="content">Conteúdo do Post:</label>
-  <textarea name="content" id="content" rows="5" required></textarea>
+  <textarea name="content" id="content" rows="5" required maxlength="50"></textarea>
 
   <input type="submit" value="Publicar">
 </form>

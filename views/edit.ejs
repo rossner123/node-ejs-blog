@@ -3,10 +3,10 @@
 <form action="/edit/<%= postId %>" method="post">
     <h1><%= postId %></h1>
     <label for="newTitle">Título do Post:</label>
-    <input type="text" name="newTitle" id="newTitle" required>
+    <input type="text" name="newTitle" id="newTitle" required maxlength="20">
 
     <label for="newContent">Conteúdo do Post:</label>
-    <textarea name="newContent" id="newContent" rows="5" required></textarea>
+    <textarea name="newContent" id="newContent" rows="5" required maxlength="50"></textarea>
 
     <input type="submit" value="Editar">
 </form>

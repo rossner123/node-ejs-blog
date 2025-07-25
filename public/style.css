@@ -6,6 +6,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+     font-weight: 300;
 }
 
 .main-header {
@@ -38,8 +39,8 @@ body {
 }
 
 .navbar a {
-    font-size: 15px;
-    padding: 1.4rem;
+    font-size: 16px;
+    padding: 1.3rem;
     text-decoration: none;
     color: #333;
     border-left: 1px solid #EEEEEE;
@@ -98,6 +99,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: #EDF3F3;
 }
 
 .posts {
@@ -158,7 +160,6 @@ body {
 
 .title {
     font-size: 18px;
-    font-weight: 100;
     margin-top: -10px;
     margin-bottom: 35px;
     padding: 0 40px;
@@ -237,12 +238,17 @@ body {
 }
 
 .footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #fff;
     padding: 40px 60px;
     border-top: 1px solid #eee;
 }
 
 .footer-container {
+    width: 80%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -250,7 +256,6 @@ body {
 }
 
 .footer-section {
-    flex: 1;
     min-width: 250px;
 }
 
@@ -281,12 +286,18 @@ body {
 }
 
 .social-icons a:hover {
-    background-color: #3454d1;
+    background-color: #fff;
+    outline: 1px solid #007BFF;
+}
+
+.categories{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .categories a {
     display: inline-block;
-    margin: 6px 8px 0 0;
+    margin: 15px 8px 6px 0;
     color: #000;
     text-decoration: none;
     font-size: 14px;
@@ -306,17 +317,19 @@ body {
 }
 
 .subscribe-form input {
-    border: none;
-    padding: 12px;
+    border: 1px solid #eee;
+    border-right: none;
+    padding: 15px;
     flex: 1;
     outline: none;
     background-color: transparent;
 }
 
 .subscribe-form button {
-    border: none;
+    border: 1px solid #eee;
+    border-left: none;
     background: none;
-    padding: 12px;
+    padding: 15px;
     cursor: pointer;
     font-size: 16px;
     color: #333;
