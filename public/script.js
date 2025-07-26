@@ -1,21 +1,35 @@
-const inputTitle = document.querySelector("#title");
-const contadorTitle = document.querySelector("#contadorTitle");
+// TITLE
+const inputTitle = document.querySelector("#title") || document.querySelector("#newTitle");
+const contadorTitle = document.querySelector("#contadorTitle")
 
-inputTitle.addEventListener("input", () => {
-  contadorTitle.textContent = `${inputTitle.value.length}/20`;
-});
+if (inputTitle && contadorTitle) {
+  inputTitle.addEventListener("input", () => {
+    contadorTitle.textContent = `${inputTitle.value.length}/20`;
+  });
+}
 
-const inputContent = document.querySelector("#content");
+// CONTENT
+const inputContent = document.querySelector("#content") || document.querySelector("#newContent");
 const contadorContent = document.querySelector("#contadorContent");
 
-inputContent.addEventListener("input", () => {
-  contadorContent.textContent = `${inputContent.value.length}/50`;
-});
+if (inputContent && contadorContent) {
+  inputContent.addEventListener("input", () => {
+    contadorContent.textContent = `${inputContent.value.length}/50`;
+  });
+}
 
-const cancelBtn = document.querySelector("#cancel-btn")
+// CANCEL BUTTONS
+const cancelBtn = document.querySelector("#cancel-btn");
+const cancelEditBtn = document.querySelector("#cancel-edit-btn");
 
-cancelBtn.addEventListener("click", () => {
-    location.href = "/"
-})
+if (cancelBtn) {
+  cancelBtn.addEventListener("click", () => {
+    location.href = "/";
+  });
+}
 
-
+if (cancelEditBtn) {
+  cancelEditBtn.addEventListener("click", () => {
+    location.href = "/";
+  });
+}

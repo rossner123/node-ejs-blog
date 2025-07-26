@@ -1,14 +1,32 @@
 <%- include("./partials/header.ejs") %>
 
-<form action="/edit/<%= postId %>" method="post">
-    <h1><%= postId %></h1>
-    <label for="newTitle">Título do Post:</label>
-    <input type="text" name="newTitle" id="newTitle" required maxlength="20">
+<div class="form-main">
+  <form action="/edit/<%= postId %>" method="post" class="form-container">
+    <h1>Edit Post</h1>
 
-    <label for="newContent">Conteúdo do Post:</label>
-    <textarea name="newContent" id="newContent" rows="5" required maxlength="50"></textarea>
+    <div class="form-section">
+      <label for="newTitle">New Title</label>
+      <div class="input-wrapper">
+        <input id="newTitle" name="newTitle" type="text"
+          placeholder="Summarize the things you learn here (no more than 20 characters)" required maxlength="20">
+        <span id="contadorTitle">0/20</span>
+      </div>
+      <label for="newContent">New Content</label>
+      <div class="input-wrapper">
+        <input id="newContent" name="newContent" type="text"
+          placeholder="Summarize the things you learn here (no more than 50 characters)" required maxlength="50">
+        <span id="contadorContent">0/50</span>
+      </div>
+      <div class="media-options">
+        <button class="media-btn" type="button"><span>+</span> Add Picture</button>
+      </div>
+    </div>
 
-    <input type="submit" value="Editar">
-</form>
+    <div class="form-actions">
+      <button class="submit-btn" id="submit-btn" type="submit">Submit</button>
+      <input class="cancel-btn" id="cancel-edit-btn" value="Cancel" type="button">
+    </div>
+  </form>
+</div>
 
 <%- include("./partials/footer.ejs") %>

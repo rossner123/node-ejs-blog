@@ -424,12 +424,12 @@ form .delete-btn.show {
   border-left: none;
 }
 
-.form-section #title {
+.form-section #title, #newTitle {
     padding-bottom: 20px;
     vertical-align: top;
 }
 
-.form-section #content{
+.form-section #content, #newContent{
     height: 100px;
     padding-top: 20px;
     padding-bottom: 80px;
