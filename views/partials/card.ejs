@@ -1,27 +1,48 @@
-<div class="card">
-  <div class="post">
-    <div class="post-image" style="background-image: url('./images/pexels-photo-370474.jpeg.webp');"></div>
+<div class="card-container">
+  <div class="card">
+    <div class="post">
+      <div class="post-image" style="background-image: url('./images/pexels-photo-370474.jpeg.webp');"></div>
 
-    <div class="post-avatar">
-      <img src="./images/avatar1.webp" alt="Author">
-    </div>
+      <div class="post-avatar">
+        <img src="./images/avatar1.webp" alt="Author">
+      </div>
 
-    <div class="post-info">
-      <h3 class="title"><%= post.title %></h3>
-      <p class="title"><%= post.content %></p>
-      <ul class="post-footer">
-        <li><i class="fa fa-heart"></i> 57</li>
-        <li><i class="fa fa-comment"></i> 6</li>
-        <li><i class="fa fa-eye"></i> 138</li>
-      </ul>
-    </div>
+      <div class="post-info">
+        <h3 class="title">
+          <%= post.title %>
+        </h3>
+        <p class="title">
+          <%= post.content %>
+        </p>
+        <ul class="post-footer">
+          <li><i class="fa fa-heart"></i> 57</li>
+          <li><i class="fa fa-comment"></i> 6</li>
+          <li><i class="fa fa-eye"></i> 138</li>
+        </ul>
+      </div>
 
-    <div class="post-actions">
+      <div class="post-actions">
         <a href="/edit/<%= post.id %>" class="edit-btn"><i class="fa fa-pencil"></i></a>
-        <form action="/delete/<%= post.id %>" method="POST" style="display:inline;">
-            <button type="submit" class="delete-btn"><i class="fa fa-trash"></i></button>
-        </form>
+        <button type="submit" class="delete-btn" id="delete-btn"><i class="fa fa-trash"></i></button>
+      </div>
     </div>
-
   </div>
+  <form action="/delete/<%= post.id %>" method="POST" id="form-delete">
+      <button type="submit" class="delete-btn">Excluir</button>
+    </form>
 </div>
+
+<script>
+  const deleteBtn = document.querySelector("#delete-btn")
+  deleteBtn.addEventListener("click", () => {
+    document.querySelector(`form .delete-btn`).classList.toggle(`show`)
+    
+    if(document.querySelector(`form .delete-btn`).className.includes("show")){
+      deleteBtn.innerHTML = '<i class="fa fa-times"></i>'
+    }
+    else{
+      deleteBtn.innerHTML = '<i class="fa fa-trash"></i>'
+    }
+
+  })
+</script>
