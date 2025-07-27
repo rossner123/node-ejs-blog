@@ -53,7 +53,7 @@ body {
     background-color: #EEEEEE;
 }
 
-.search-box {
+.search-box{
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -109,7 +109,6 @@ body {
     gap: 4rem 3rem;
     margin: 5rem 0;
     max-height: calc(4 * 100%);
-    /* opcional: limitar altura total */
 }
 
 .card-container {
@@ -266,6 +265,64 @@ form .delete-btn.show {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
     transform: translateY(-10px);
     color: #4a76fd;
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .posts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: white;
+  border: none;
+  cursor: pointer;
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+    .posts {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+  .menu-toggle {
+      display: block;
+  }
+
+  .navbar {
+    width: max-content;
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    border-top: none;
+    padding: 1rem;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navbar a{
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 0;
+  }
+
+  .navbar.show {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-box{
+    display: flex;
+  }
 }
 
 

@@ -19,6 +19,10 @@ app.get("/", (req, res) => {
     console.log(posts)
 })
 
+app.get("/post", (req, res) => {
+    
+})
+
 app.get("/new", (req, res) => {
     res.render("new.ejs")
 })
