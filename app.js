@@ -15,12 +15,26 @@ app.get("/", (req, res) => {
     res.render("index.ejs", {
         posts: posts,
     })
-
-    console.log(posts)
 })
 
-app.get("/post", (req, res) => {
-    
+app.get("/search", (req, res) => {
+    const query = req.query.q.toLowerCase()
+
+    const postsFilter = [];
+    for (let i = 0; i < posts.length; i++) {
+      if (
+        posts[i].title.toLowerCase().includes(query) ||
+        posts[i].content.toLowerCase().includes(query)
+      ) {
+        postsFilter.push(posts[i]);
+      }
+    }
+
+    res.render("index.ejs", {
+        posts: postsFilter,
+        fromSearch: true,
+        searchQuery: query
+    })
 })
 
 app.get("/new", (req, res) => {

@@ -26,9 +26,29 @@
             </div>
         
             <div class="search-box">
-                <button><i class="fa fa-search"></i></button>
-                <input type="text" placeholder="Type of search" />
+                <form action="/search" method="get">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                    <input type="text" name="q" id="q" placeholder="Type of search" />
+                </form>
             </div>
+
+            <% if(typeof fromSearch !== 'undefined' && fromSearch && posts.length === 0){ %>
+                <div class="modal">
+                    <div class="modal-content">
+                        <h2>Nada encontrado</h2>
+                        <p>Nenhum post encontrado para "<%= searchQuery %>".</p>
+                        <div class="button-container">
+                            <button onclick="closeModal()">OK</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <script>
+                    function closeModal() {
+                        document.querySelector('.modal').style.display = 'none';
+                    }
+                </script>
+            <% } %>
 
             <button class="menu-toggle" aria-label="Toggle menu">
                 &#9776;
