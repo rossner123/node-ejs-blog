@@ -23,26 +23,11 @@
 
       <div class="post-actions">
         <a href="/edit/<%= post.id %>" class="edit-btn"><i class="fa fa-pencil"></i></a>
-        <button type="submit" class="delete-btn" id="delete-btn"><i class="fa fa-trash"></i></button>
+        <button type="submit" class="delete-btn"><i class="fa fa-trash"></i></button>
       </div>
     </div>
   </div>
   <form action="/delete/<%= post.id %>" method="POST" id="form-delete">
-      <button type="submit" class="delete-btn">Excluir</button>
+      <button type="submit" class="delete-btn2">Excluir</button>
     </form>
 </div>
-
-<script>
-  const deleteBtn = document.querySelector("#delete-btn")
-  deleteBtn.addEventListener("click", () => {
-    document.querySelector(`form .delete-btn`).classList.toggle(`show`)
-    
-    if(document.querySelector(`form .delete-btn`).className.includes("show")){
-      deleteBtn.innerHTML = '<i class="fa fa-times"></i>'
-    }
-    else{
-      deleteBtn.innerHTML = '<i class="fa fa-trash"></i>'
-    }
-
-  })
-</script>

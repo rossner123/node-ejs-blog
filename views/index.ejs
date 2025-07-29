@@ -3,14 +3,36 @@
 <div class="slider"></div>
 
 <section class="posts-section">
-    <div class="posts">
-        <% posts.slice(0, 12).forEach((post) => { %>
+  <div class="posts">
+    <% posts.forEach((post, i) => { %>
+       <div class="post-container <%= i < 12 ? '' : 'hidden' %>">
             <%- include("./partials/card.ejs", {post: post}) %>
-        <% }) %>
-    </div>
+        </div>
+    <% }) %>
+</div>
 
-<button class="load-more">LOAD MORE</button>
+<button class="load-more" id="load-more">LOAD MORE</button>
 </section>
 
-
 <%- include("./partials/footer.ejs") %>
+
+<script>
+const deleteBtns = document.querySelectorAll(".delete-btn");
+
+deleteBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const cardContainer = btn.closest(".card-container");
+
+    const confirmBtn = cardContainer.querySelector(".delete-btn2");
+
+    confirmBtn.classList.toggle("show");
+
+    if (confirmBtn.classList.contains("show")) {
+      btn.innerHTML = '<i class="fa fa-times"></i>';
+    } else {
+      btn.innerHTML = '<i class="fa fa-trash"></i>';
+    }
+  });
+});
+
+</script>
